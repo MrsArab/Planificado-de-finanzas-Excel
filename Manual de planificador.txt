@@ -1,0 +1,242 @@
+README – Planificador en Excel (.xlsm)
+
+Este documento resume el funcionamiento del planificador y explica cómo configurarlo y usarlo correctamente.
+
+============================================================
+USO SEGÚN EL DISPOSITIVO
+============================================================
+
+APLICACIÓN DE ESCRITORIO (RECOMENDADO)
+- Permite ejecutar macros VBA y usar los botones automatizados.
+- Después de habilitar macros y conexiones, cierre y vuelva a abrir el archivo.
+- Mantenga el formato .xlsm.
+
+EXCEL PARA LA WEB
+- No ejecuta macros.
+- Puede registrar información manualmente en BD y BD_Diario.
+- El tablero de Ejecución puede consultarse y, según el plan de Microsoft 365, actualizar consultas.
+- Use Datos > Actualizar todo cuando esté disponible.
+
+TELÉFONO
+- Permite consultar el archivo y registrar datos manuales en BD y BD_Diario.
+- Las macros no funcionan.
+- Las consultas deben actualizarse luego desde la Web compatible o escritorio.
+
+Recomendación: deje que OneDrive termine de sincronizar antes de abrir el archivo en otro dispositivo.
+
+============================================================
+1. REQUISITOS PREVIOS
+============================================================
+- Usar Excel de escritorio.
+- Mantener el formato .xlsm.
+- Confirmar que el archivo proviene de una fuente confiable.
+- Tener acceso a los orígenes de datos usados por las consultas.
+
+============================================================
+2. CONFIGURACIÓN INICIAL
+============================================================
+1. Abrir el archivo en Excel de escritorio.
+2. Habilitar macros (Habilitar contenido).
+3. Habilitar consultas y conexiones.
+4. Cerrar completamente el archivo.
+5. Volver a abrirlo para iniciar la configuración automática.
+
+============================================================
+3. CONFIGURACIÓN DEL PERFIL
+============================================================
+Al abrir el archivo después de habilitar todo, aparecerá una ventana para:
+- Ingresar nombre.
+- Seleccionar modo de uso:
+  * Personal: ingresos y egresos.
+  * Empresa: ingresos, costos y gastos.
+
+============================================================
+4. CONTENIDO DEL ARCHIVO
+============================================================
+
+Hoja          | Función
+-----------------------------------------------
+Proyectar     | Elaborar y registrar presupuestos.
+Diario        | Registrar desembolsos diarios.
+Ejecución     | Tablero de control de ejecución.
+BD            | Base de datos de presupuestos.
+BD_Diario     | Base de datos de desembolsos.
+Auxiliar      | Parametrización y listas desplegables.
+
+Importante:
+- BD y BD_Diario no deben modificarse manualmente en escritorio.
+- Auxiliar sí puede editarse para administrar listas.
+
+------------------------------------------------------------
+4.1 ELIMINAR DATOS DE MUESTRA
+------------------------------------------------------------
+1. En BD y BD_Diario, ubicarse en A2.
+2. Presionar Ctrl + Shift + Fin.
+3. Presionar Supr para borrar contenido.
+4. Para borrar formatos: Inicio > Borrar > Borrar todo.
+No eliminar encabezados ni estructura.
+
+============================================================
+5. USO DE LA HOJA PROYECTAR
+============================================================
+
+------------------------------------------------------------
+5.1 CONFIGURAR PERIODICIDAD
+------------------------------------------------------------
+Opciones: Mensual, Bimestral, Trimestral, Cuatrimestral, Semestral, Anual.
+Definir:
+- Año del presupuesto.
+- Secuencia (depende de periodicidad).
+
+Ejemplo:
+Periodicidad Bimestral:
+- Secuencia 1: meses impares.
+- Secuencia 2: meses pares.
+
+------------------------------------------------------------
+5.2 CALCULADORA DE VALOR TOTAL (celda N4)
+------------------------------------------------------------
+Permite calcular el valor anual según periodicidad y monto por periodo.
+
+Ejemplo:
+Periodicidad Bimestral + monto $200.000 ? total $1.200.000.
+
+------------------------------------------------------------
+5.3 DISTRIBUCIÓN MANUAL
+------------------------------------------------------------
+Disponible solo para periodicidad Mensual.
+- Desactivar “Distribución automática”.
+- Marcar meses deseados.
+- Revisar distribución antes de guardar.
+
+------------------------------------------------------------
+5.4 REGISTRAR INFORMACIÓN
+------------------------------------------------------------
+Completar:
+- Concepto
+- Detalle
+- Descripción
+- Monto
+Luego seleccionar Guardar Registro.
+
+------------------------------------------------------------
+5.5 TABLAS Y GRÁFICOS DE RESUMEN
+------------------------------------------------------------
+Incluye:
+- Totales por categoría (según modo Personal/Empresa).
+- Gráficos de distribución.
+
+============================================================
+6. USO DE LA HOJA DIARIO
+============================================================
+
+------------------------------------------------------------
+6.1 FECHA
+------------------------------------------------------------
+La celda Fecha usa HOY(). Puede modificarse si se registra un movimiento de otro día.
+
+------------------------------------------------------------
+6.2 REGISTRAR MOVIMIENTO
+------------------------------------------------------------
+Completar:
+- Concepto
+- Detalle
+- Descripción
+- Monto
+Luego seleccionar Guardar Registro.
+
+------------------------------------------------------------
+6.3 SEGUIMIENTO
+------------------------------------------------------------
+Incluye:
+- Totales por categoría
+- Comportamiento mensual
+- Últimos movimientos
+
+============================================================
+7. USO DE LA HOJA EJECUCIÓN
+============================================================
+
+------------------------------------------------------------
+7.1 FILTROS INTERACTIVOS
+------------------------------------------------------------
+Filtros disponibles:
+- Mes
+- Año
+- Concepto
+- Elementos
+- Descripción
+
+------------------------------------------------------------
+7.2 INDICADORES PRINCIPALES
+------------------------------------------------------------
+Incluye:
+- Presupuesto del año
+- Desembolsos realizados
+- Pendiente por ejecutar
+- % de ejecución
+- Presupuesto a la fecha
+- Desembolsos a la fecha
+- Pendiente a la fecha
+
+------------------------------------------------------------
+7.3 TABLA POR DETALLE
+------------------------------------------------------------
+Columnas:
+- Presupuesto
+- Diario
+- Ejecución
+- % ejecución
+- Estado
+
+------------------------------------------------------------
+7.4 TABLA MENSUAL
+------------------------------------------------------------
+Columnas:
+- Presupuesto
+- Diario
+- Ejecución
+- % ejecución
+
+------------------------------------------------------------
+7.5 ACTUALIZACIÓN
+------------------------------------------------------------
+Usar el botón Actualizar después de registrar o modificar datos.
+
+============================================================
+8. USO DE LA HOJA AUXILIAR
+============================================================
+
+------------------------------------------------------------
+8.1 ADMINISTRAR OPCIONES
+------------------------------------------------------------
+- Agregar: escribir en la primera fila disponible.
+- Modificar: editar directamente.
+- Eliminar: borrar solo la opción.
+
+------------------------------------------------------------
+8.2 CONCEPTOS
+------------------------------------------------------------
+Puede actualizar tablas de:
+- Ingresos
+- Costos
+- Gastos
+
+------------------------------------------------------------
+8.3 AGREGAR NUEVO ELEMENTO DE EGRESOS
+------------------------------------------------------------
+Pasos:
+1. Agregar nombre del elemento en la columna Elementos.
+2. Agregar nueva columna en la tabla.
+3. Asignar exactamente el mismo nombre.
+4. Incluir descripciones debajo del encabezado.
+5. Verificar que aparezca en Proyectar y Diario.
+
+Precauciones:
+- No dejar columnas sin nombre.
+- No usar nombres diferentes entre índice y columna.
+- No eliminar fórmulas o rangos.
+
+============================================================
+FIN DEL README
+============================================================
